@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
-import App from './presentation/pages/App'
+import App from './presentation/pages/Resister_Step1/Resister_Step1'
 
 ReactDOM.render(
   <React.StrictMode>
