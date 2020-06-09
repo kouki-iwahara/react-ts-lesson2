@@ -1,21 +1,59 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 import Header from '../../components/organisms/Header/Header'
 import RadioButton from '../../components/atoms/Radio/RadioButton'
-import Select from '../../components/atoms/Select/Select'
 import Button from '../../components/atoms/Button/Button'
 
-import {
-  YEAR_OPTIONS,
-  MONTH_OPTIONS,
-  DAY_OPTIONS,
-} from '../../../plugins/definition'
-
-const App: React.FC = () => {
+const Step2: React.FC = () => {
+  const history = useHistory()
   return (
     <>
-      <div>step2</div>
+      <Header label="STEP2" text="以下にお答えください"></Header>
+      <div>生命保険に加入されていますか？</div>
+      <RadioButton
+        name={'質問1'}
+        value={'はい'}
+        id={'q1Yes'}
+        onChange={(event) => console.log(event.target.value)}
+      ></RadioButton>
+      <RadioButton
+        name={'質問1'}
+        value={'いいえ'}
+        id={'q1No'}
+        onChange={(event) => console.log(event.target.value)}
+      ></RadioButton>
+      <div>現在入院中ですか？3ヶ月以内に手術をすすめられましたか？</div>
+      <RadioButton
+        name={'質問2'}
+        value={'はい'}
+        id={'q2Yes'}
+        onChange={(event) => console.log(event.target.value)}
+      ></RadioButton>
+      <RadioButton
+        name={'質問2'}
+        value={'いいえ'}
+        id={'q2No'}
+        onChange={(event) => console.log(event.target.value)}
+      ></RadioButton>
+      <div>5年以内に7以上入院しましたか？</div>
+      <RadioButton
+        name={'質問3'}
+        value={'はい'}
+        id={'q3Yes'}
+        onChange={(event) => console.log(event.target.value)}
+      ></RadioButton>
+      <RadioButton
+        name={'質問3'}
+        value={'いいえ'}
+        id={'q3No'}
+        onChange={(event) => console.log(event.target.value)}
+      ></RadioButton>
+      <div>
+        <Button text="前へ戻る" onClick={() => history.push('/')}></Button>
+        <Button text="次へ進む" onClick={() => history.push('/step3')}></Button>
+      </div>
     </>
   )
 }
 
-export default App
+export default Step2

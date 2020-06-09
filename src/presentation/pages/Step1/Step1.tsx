@@ -11,7 +11,7 @@ import {
   DAY_OPTIONS,
 } from '../../../plugins/definition'
 
-const App: React.FC = () => {
+const Step1: React.FC = () => {
   const history = useHistory()
   return (
     <>
@@ -48,4 +48,4 @@ const App: React.FC = () => {
   )
 }
 
-export default App
+export default Step1
