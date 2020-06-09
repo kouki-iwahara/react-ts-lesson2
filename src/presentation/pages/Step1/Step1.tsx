@@ -1,4 +1,5 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 import Header from '../../components/organisms/Header/Header'
 import RadioButton from '../../components/atoms/Radio/RadioButton'
 import Select from '../../components/atoms/Select/Select'
@@ -11,6 +12,7 @@ import {
 } from '../../../plugins/definition'
 
 const App: React.FC = () => {
+  const history = useHistory()
   return (
     <>
       <Header label="STEP1" text="お客様の情報を入力してください"></Header>
@@ -41,7 +43,7 @@ const App: React.FC = () => {
         defaultOption="1"
         onChange={(event) => console.log(event.target.value)}
       ></Select>
-      <Button text="次へ進む" onClick={() => alert('clicked')}></Button>
+      <Button text="次へ進む" onClick={() => history.push('/step2')}></Button>
     </>
   )
 }
