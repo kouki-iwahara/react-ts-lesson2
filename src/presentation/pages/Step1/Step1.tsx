@@ -2,7 +2,7 @@ import React from 'react'
 import { useHistory } from 'react-router-dom'
 import Header from '../../components/organisms/Header/Header'
 import RadioButton from '../../components/atoms/Radio/RadioButton'
-import Select from '../../components/atoms/Select/Select'
+import Select from '../../components/atoms/Select/select'
 import Button from '../../components/atoms/Button/Button'
 
 import {

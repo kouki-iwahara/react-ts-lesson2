@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import '../../styles/main.css'
 import Header from '../../components/organisms/Header/Header'
 import RadioButton from '../../components/atoms/Radio/RadioButton'
 import Button from '../../components/atoms/Button/Button'
