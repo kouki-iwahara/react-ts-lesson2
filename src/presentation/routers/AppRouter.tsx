@@ -1,16 +1,21 @@
 import React from 'react'
-import Step1 from '../pages/Step1/Step1'
-import Step2 from '../pages/Step2/Step2'
-import Step3 from '../pages/Step3/Step3'
+import Step1Container from '../container/Step1Container'
+import Step2Container from '../container/Step2Container'
+import Step3Container from '../container/Step3Container'
+import Step4Container from '../container/Step4Container'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-
+import { Provider } from 'react-redux'
+import store from '../../store/store'
 const AppRouter: React.FC = () => {
   return (
-    <Router>
-      <Route exact path="/" component={Step1}></Route>
-      <Route exact path="/step2" component={Step2}></Route>
-      <Route exact path="/step3" component={Step3}></Route>
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <Route exact path="/" component={Step1Container}></Route>
+        <Route exact path="/step2" component={Step2Container}></Route>
+        <Route exact path="/step3" component={Step3Container}></Route>
+        <Route exact path="/step4" component={Step4Container}></Route>
+      </Router>
+    </Provider>
   )
 }
 
