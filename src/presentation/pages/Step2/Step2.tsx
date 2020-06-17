@@ -12,38 +12,35 @@ const Step2: React.FC<State & ChangeEventHandler> = (props) => {
   const [isSecondQuestion, setIsSecondQuestion] = useState(false)
   const [isThirdQuestion, setIsThirdQuestion] = useState(false)
   const { question1, question2, question3, handleOnChangeValue } = { ...props }
-  const showQuestion = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.name === '質問1' && !isSecondQuestion) {
+  const showQuestion = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.name === '質問1' && !isSecondQuestion) {
       setIsSecondQuestion(true)
-    } else if (e.target.name === '質問2' && !isThirdQuestion) {
+    } else if (event.target.name === '質問2' && !isThirdQuestion) {
       setIsThirdQuestion(true)
     }
   }
-  const changeCustomerValue = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const changeCustomerValue = (event: React.ChangeEvent<HTMLInputElement>) => {
     const customerInfo = {
       question1,
       question2,
       question3,
     }
-    switch (e.target.name) {
+    switch (event.target.name) {
       case '質問1':
-        customerInfo.question1 = e.target.value
-        handleOnChangeValue(customerInfo)
+        customerInfo.question1 = event.target.value
         break
       case '質問2':
-        customerInfo.question2 = e.target.value
-        handleOnChangeValue(customerInfo)
+        customerInfo.question2 = event.target.value
         break
       case '質問3':
-        customerInfo.question3 = e.target.value
-        handleOnChangeValue(customerInfo)
+        customerInfo.question3 = event.target.value
         break
       default:
         return customerInfo
     }
-    showQuestion(e)
+    handleOnChangeValue(customerInfo)
+    showQuestion(event)
   }
-  console.log(props)
   return (
     <>
       <Header label="STEP2" text="以下にお答えください"></Header>

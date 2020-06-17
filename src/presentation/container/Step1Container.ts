@@ -19,10 +19,8 @@ const mapStateToProps = (appState: AppState) => {
 }
 
 const mapDispatchToProps = (dispatch: Dispatch) => {
-  console.log('dispatch')
   return {
     handleOnChangeValue: (payload: State) => {
-      console.log({ payload })
       const customerInfo = {
         sex: payload.sex,
         year: payload.year,
